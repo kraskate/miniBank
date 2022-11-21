@@ -1,0 +1,4 @@
+[INFO] [class Main] [2022-11-21T19:09:36.577419100] Message
+[INFO] [class Main] [2022-11-21T19:31:42.302254900] Cute info message
+[DEBUG] [class Main] [2022-11-21T19:31:42.303252400] Cute debug message
+[WARN] [class Main] [2022-11-21T19:31:42.304249600] Cute warn message
