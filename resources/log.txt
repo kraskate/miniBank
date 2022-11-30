@@ -2,3 +2,24 @@
 [INFO] [class Main] [2022-11-21T19:31:42.302254900] Cute info message
 [DEBUG] [class Main] [2022-11-21T19:31:42.303252400] Cute debug message
 [WARN] [class Main] [2022-11-21T19:31:42.304249600] Cute warn message
+[DEBUG] [class repository.impl.FileUserRepository] [2022-11-23T19:19:27.331155] Created UserIdCounter with initial value: 1
+[DEBUG] [class repository.impl.FileUserRepository] [2022-11-23T19:20:12.659583600] Created UserIdCounter with initial value: 1
+[INFO] [class ui.ConsoleInterface] [2022-11-23T19:20:21.658162100] Введены неверные данные
+[DEBUG] [class repository.impl.FileUserRepository] [2022-11-23T19:24:42.267199] Created UserIdCounter with initial value: 1
+[INFO] [class ui.ConsoleInterface] [2022-11-23T19:24:58.548616300] Введены неверные данные
+[INFO] [class ui.Session] [2022-11-23T19:25:06.278854300] Создана сессия с root
+[INFO] [class ui.ConsoleInterface] [2022-11-23T19:25:06.278854300] Успешный вход для root
+[DEBUG] [class repository.impl.FileUserRepository] [2022-11-23T19:32:49.630104700] Created UserIdCounter with initial value: 1
+[DEBUG] [class repository.impl.FileUserRepository] [2022-11-23T19:34:43.372745900] Created UserIdCounter with initial value: 1
+[DEBUG] [class repository.impl.FileUserRepository] [2022-11-23T20:51:49.781360700] Created UserIdCounter with initial value: 1
+[DEBUG] [class repository.impl.FileUserRepository] [2022-11-23T20:53:08.625950200] Created UserIdCounter with initial value: 1
+[DEBUG] [class repository.impl.FileUserRepository] [2022-11-23T21:12:39.219462900] Created UserIdCounter with initial value: 1
+[DEBUG] [class repository.impl.FileUserRepository] [2022-11-23T21:14:54.752040100] Created UserIdCounter with initial value: 1
+[DEBUG] [class repository.impl.FileAccountRepository] [2022-11-28T20:22:14.526134100] Created empty accountIdCounter started with 0
+[DEBUG] [class repository.impl.FileUserRepository] [2022-11-28T20:22:14.529127] Created UserIdCounter with initial value: 1
+[INFO] [class ui.Session] [2022-11-28T20:22:33.177304400] Создана сессия с root
+[INFO] [class ui.ConsoleInterface] [2022-11-28T20:22:33.178311600] Успешный вход для root
+[DEBUG] [class repository.impl.FileAccountRepository] [2022-11-28T21:13:06.760324800] Created empty accountIdCounter started with 0
+[DEBUG] [class repository.impl.FileUserRepository] [2022-11-28T21:13:06.764314100] Created UserIdCounter with initial value: 1
+[INFO] [class ui.Session] [2022-11-28T21:13:11.850709800] Создана сессия с root
+[INFO] [class ui.ConsoleInterface] [2022-11-28T21:13:11.850709800] Успешный вход для root
