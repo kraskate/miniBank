@@ -2,9 +2,11 @@ package mapper;
 
 import model.Sex;
 import model.User;
+import service.validation.UserValidationRequest;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Collections;
 
 public class UserMapper {
 
@@ -41,5 +43,16 @@ public class UserMapper {
 
         return user;
 
+    }
+
+    public static User toObject(UserValidationRequest request) {
+        return new User(request.getUserName(),
+                request.getPassword(),
+                request.getFirstName(),
+                request.getLastName(),
+                LocalDate.parse(request.getBirthDate()),
+                Sex.valueOf(request.getSex()),
+                request.getEmail(),
+                Collections.emptyList());
     }
 }

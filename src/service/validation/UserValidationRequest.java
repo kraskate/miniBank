@@ -1,25 +1,20 @@
-package model;
+package service.validation;
+
+import model.Sex;
 
 import java.time.LocalDate;
-import java.util.List;
 
-public class User {
+public class UserValidationRequest {
 
-    private Long id;
     private String userName;
     private String password;
     private String firstName;
     private String lastName;
-    private LocalDate birthDate;
-    private Sex sex;
+    private String birthDate;
+    private String sex;
     private String email;
-    private List<Account> accounts;
 
-    public User() {
-    }
-
-    public User(String userName, String password, String firstName, String lastName, LocalDate birthDate, Sex sex,
-                String email, List<Account> accounts) {
+    public UserValidationRequest(String userName, String password, String firstName, String lastName, String birthDate, String sex, String email) {
         this.userName = userName;
         this.password = password;
         this.firstName = firstName;
@@ -27,30 +22,6 @@ public class User {
         this.birthDate = birthDate;
         this.sex = sex;
         this.email = email;
-    }
-
-    public User(Long id, String userName, String password, String firstName, String lastName, LocalDate birthDate,
-                Sex sex, String email, List<Account> accounts) {
-        this.id = id;
-        this.userName = userName;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.birthDate = birthDate;
-        this.sex = sex;
-        this.email = email;
-    }
-
-    public boolean isNew() {
-        return id == null;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getUserName() {
@@ -85,19 +56,19 @@ public class User {
         this.lastName = lastName;
     }
 
-    public LocalDate getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 
-    public Sex getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(Sex sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 
@@ -107,13 +78,5 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public List<Account> getAccounts() {
-        return accounts;
-    }
-
-    public void setAccounts(List<Account> accounts) {
-        this.accounts = accounts;
     }
 }
