@@ -1,12 +1,8 @@
 package service;
 
 import model.Account;
-import model.AccountOperationType;
 import repository.AccountRepository;
-import repository.impl.FileAccountOperationsRepository;
 import repository.impl.FileAccountRepository;
-
-import java.util.Optional;
 
 import static model.AccountOperationType.*;
 

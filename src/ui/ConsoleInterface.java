@@ -5,6 +5,7 @@ import exception.ExitAppException;
 import logger.Logger;
 import logger.LoggerFactory;
 import model.Account;
+import model.AccountOperationsLog;
 import model.User;
 import service.AccountOperationsLogService;
 import service.AccountService;
@@ -139,12 +140,12 @@ public class ConsoleInterface {
             System.out.println("1 Просмотреть историю операций");
             System.out.println("2 Экспорт истории");
             System.out.println("3 Загрузить операции");
-            System.out.println(" Возврат в предыдущее меню");
+            System.out.println("0 Возврат в предыдущее меню");
 
             int chooseLogOperation = scanner.nextInt();
             switch (chooseLogOperation) {
                 case 1: {
-                    List<String> operations = accountOperationsLogService.getOperations(session.getUser());
+                    List<AccountOperationsLog> operations = accountOperationsLogService.getOperations(session.getUser());
                     operations.forEach(System.out::println);
                     break;
                 }
@@ -153,7 +154,10 @@ public class ConsoleInterface {
                     break;
                 }
                 case 3: {
-
+                    System.out.println("Поместите файл в папку. Он будет удален после завершения");
+                    accountOperationsLogService.importOperations(session.getUser());
+                    System.out.println("Импорт операций произошел успешно. Файл удален");
+                    break;
                 }
                 case 0: {
                     throw new BackToLastMenuException();
@@ -185,8 +189,6 @@ public class ConsoleInterface {
                         break;
                     }
 
-                    accountOperationsLoop();
-                    break;
                 }
                 case 2: {
                     userService.createAccount(session.getUser());
@@ -213,7 +215,7 @@ public class ConsoleInterface {
 
         while (true) {
             for (int i = 0; i < accounts.size(); i++) {
-                System.out.println((i + 1) + "Счет номер " + accounts.get(i).getId());
+                System.out.println((i + 1) + " Счет номер " + accounts.get(i).getId());
             }
             System.out.println("0 Возврат в предыдущее меню");
 
@@ -221,6 +223,7 @@ public class ConsoleInterface {
             if (chooseUserAccount > 0 && chooseUserAccount <= accounts.size()) {
                 session.addAccount(accounts.get(chooseUserAccount - 1));
                 System.out.println("Выбран счет номер " + accounts.get(chooseUserAccount - 1).getId());
+                return;
             } else if (chooseUserAccount == 0) {
                 throw new BackToLastMenuException();
             } else {

@@ -12,18 +12,16 @@ public class UserMapper {
 
     public static String toCsv(User user) {
 
-        //TODO can be replaced with UserCsvBuilder
-        StringBuilder sb = new StringBuilder();
-        sb.append(user.getId()).append(",");
-        sb.append(user.getUserName()).append(",");
-        sb.append((user.getPassword())).append(",");
-        sb.append((user.getFirstName())).append(",");
-        sb.append((user.getLastName())).append(",");
-        sb.append((user.getBirthDate())).append(",");
-        sb.append((user.getSex())).append(",");
-        sb.append((user.getEmail()));
+        CsvBuilder builder = new CsvBuilder();
+        return builder.add(user.getId())
+                .add(user.getUserName())
+                .add(user.getPassword())
+                .add(user.getFirstName())
+                .add(user.getLastName())
+                .add(user.getBirthDate())
+                .add(user.getSex())
+                .addAndBuild(user.getEmail());
 
-        return sb.toString();
 
     }
 

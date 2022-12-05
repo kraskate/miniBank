@@ -1,7 +1,6 @@
 package model;
 
 public class AccountOperationsLog {
-
     private Long id;
     private AccountOperationType type;
     private Integer amount;
@@ -11,15 +10,17 @@ public class AccountOperationsLog {
     public AccountOperationsLog() {
     }
 
-    public AccountOperationsLog(Long id, AccountOperationType type, Integer amount, Long sourceAccountId, Long targetAccountId) {
-        this.id = id;
+    public AccountOperationsLog(final AccountOperationType type, final Integer amount,
+                                final Long sourceAccountId, final Long targetAccountId) {
         this.type = type;
         this.amount = amount;
         this.sourceAccountId = sourceAccountId;
         this.targetAccountId = targetAccountId;
     }
 
-    public AccountOperationsLog(AccountOperationType type, Integer amount, Long sourceAccountId, Long targetAccountId) {
+    public AccountOperationsLog(final Long id, final AccountOperationType type, final Integer amount,
+                                final Long sourceAccountId, final Long targetAccountId) {
+        this.id = id;
         this.type = type;
         this.amount = amount;
         this.sourceAccountId = sourceAccountId;
@@ -30,7 +31,7 @@ public class AccountOperationsLog {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(final Long id) {
         this.id = id;
     }
 
@@ -38,7 +39,7 @@ public class AccountOperationsLog {
         return type;
     }
 
-    public void setType(AccountOperationType type) {
+    public void setType(final AccountOperationType type) {
         this.type = type;
     }
 
@@ -46,7 +47,7 @@ public class AccountOperationsLog {
         return amount;
     }
 
-    public void setAmount(Integer amount) {
+    public void setAmount(final Integer amount) {
         this.amount = amount;
     }
 
@@ -54,7 +55,7 @@ public class AccountOperationsLog {
         return sourceAccountId;
     }
 
-    public void setSourceAccountId(Long sourceAccountId) {
+    public void setSourceAccountId(final Long sourceAccountId) {
         this.sourceAccountId = sourceAccountId;
     }
 
@@ -62,7 +63,7 @@ public class AccountOperationsLog {
         return targetAccountId;
     }
 
-    public void setTargetAccountId(Long targetAccountId) {
+    public void setTargetAccountId(final Long targetAccountId) {
         this.targetAccountId = targetAccountId;
     }
 
@@ -75,9 +76,5 @@ public class AccountOperationsLog {
             result = result + " на счет " + targetAccountId;
         }
         return result;
-    }
-
-    public boolean isNew() {
-        return id == null;
     }
 }

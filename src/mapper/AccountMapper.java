@@ -5,12 +5,11 @@ import model.Account;
 public class AccountMapper {
 
     public static String toCsv(Account account) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(account.getId()).append(",");
-        sb.append(account.getAmount()).append(",");
-        sb.append(account.getUserId());
 
-        return sb.toString();
+        CsvBuilder builder = new CsvBuilder();
+        return builder.add(account.getId())
+                .add(account.getAmount())
+                .addAndBuild(account.getUserId());
     }
 
     public static Account toObject(String csvString) {
